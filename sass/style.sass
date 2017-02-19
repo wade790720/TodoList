@@ -1,0 +1,41 @@
+@mixin size($w,$h)
+  width: $w
+  height: $h
+
+*
+  position: relative
+  font-family: "微軟正黑體"
+
+html,body
+  +size(100%,100%)
+  margin: 0
+  padding: 0
+  display: flex
+  justify-content: center
+  align-items: center
+
+.todolist
+  +size(500px,100%)
+  display: inline-block
+  max-height: 700px
+  overflow: auto
+  .collection-header
+    h4
+      font-weight: bolder
+    button
+      +size(100%,100%)
+  & ul
+    padding: 0px
+  & li
+    list-style: none
+    .delete
+      height: 25px
+      line-height: 15px
+
+.pull-right
+  float: right
+
+.done
+  &:before
+    content: " ✓ "
+    color: red
